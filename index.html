@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>淘趣集市 - 首页</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <a class="brand" href="index.html">淘趣集市</a>
+    <form class="search-form" action="products.html" method="get">
+      <input type="search" name="q" placeholder="搜商品（例如：耳机、台灯、零食）">
+      <button type="submit">搜索</button>
+    </form>
+    <nav class="top-nav">
+      <a href="index.html" class="active">首页</a>
+      <a href="products.html">商品</a>
+      <a href="cart.html">购物车 <span id="cartBadge" class="badge">0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-tag">课堂作业演示项目</p>
+        <h1>像淘宝一样浏览、筛选、下单体验</h1>
+        <p>支持跳转、响应式布局、购物车动态刷新和本地持久化。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="products.html">进入商品页</a>
+          <a class="button ghost" href="cart.html">查看购物车</a>
+        </div>
+      </div>
+      <div class="countdown-card">
+        <p>限时闪购倒计时</p>
+        <strong id="countdown">00:00:00</strong>
+        <small>每 8 秒自动刷新推荐商品</small>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>热门分类</h2>
+      <div id="quickCategories" class="category-list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>限时推荐</h2>
+      <div id="featuredGrid" class="product-grid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>2026 开源软件课作业示例 | AI + 社区资源拼装式开发</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

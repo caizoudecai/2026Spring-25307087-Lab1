@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>淘趣集市 - 商品详情</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="productDetail">
+  <header class="site-header">
+    <a class="brand" href="index.html">淘趣集市</a>
+    <form class="search-form" action="products.html" method="get">
+      <input type="search" name="q" placeholder="继续搜你想要的">
+      <button type="submit">搜索</button>
+    </form>
+    <nav class="top-nav">
+      <a href="index.html">首页</a>
+      <a href="products.html">商品</a>
+      <a href="cart.html">购物车 <span id="cartBadge" class="badge">0</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="detailPanel" class="panel detail-panel"></section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
