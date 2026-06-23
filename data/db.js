@@ -1,13 +1,14 @@
 export const database = {
   categories: [
-    { id: 'c1', name: 'Fresh Produce', icon: '🥬' },
-    { id: 'c2', name: 'Meat & Seafood', icon: '🥩' },
-    { id: 'c3', name: 'Dairy & Eggs', icon: '🥚' },
-    { id: 'c4', name: 'Pantry', icon: '🥫' },
-    { id: 'c5', name: 'Beverages', icon: '🧃' },
-    { id: 'c6', name: 'Bakery', icon: '🥖' },
-    { id: 'c7', name: 'Frozen Foods', icon: '🧊' },
-    { id: 'c8', name: 'Organic', icon: '🌱' }
+    { id: 'fruits', name: 'Fresh Fruits', icon: '🍎' },
+    { id: 'vegetables', name: 'Vegetables', icon: '🥦' },
+    { id: 'meat', name: 'Meat & Seafood', icon: '🥩' },
+    { id: 'dairy', name: 'Dairy & Eggs', icon: '🥛' },
+    { id: 'bakery', name: 'Bakery', icon: '🥐' },
+    { id: 'beverages', name: 'Beverages', icon: '🧃' },
+    { id: 'snacks', name: 'Snacks & Sweets', icon: '🍫' },
+    { id: 'pantry', name: 'Pantry', icon: '🥫' },
+    { id: 'frozen', name: 'Frozen Foods', icon: '🧊' }
   ],
   products: [
     { id: 'p1', categoryId: 'c1', name: 'Organic Bananas', price: 2.99, unit: 'bunch', stock: 150, rating: 4.8, reviews: 1240, image: 'https://images.unsplash.com/photo-1603833665858-e61d17a86224?w=500&q=80', description: 'Fresh, organic bananas from Ecuador. Perfect for smoothies or a quick snack.', tags: ['Organic', 'Fresh', 'Fruit'], isNew: false, isSale: true, originalPrice: 3.49 },

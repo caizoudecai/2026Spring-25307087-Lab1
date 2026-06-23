@@ -56,10 +56,11 @@ export class StorefrontView extends BaseComponent {
 
     const sortSelect = this.container.querySelector('#sort-select');
     if (sortSelect) {
+      // Set initial value from state
+      sortSelect.value = store.getState().sortBy || 'popular';
+      
       sortSelect.addEventListener('change', (e) => {
-        // In a real app, this would dispatch an action
-        console.log('Sort changed to:', e.target.value);
-        store.addNotification(`Sorted by ${e.target.options[e.target.selectedIndex].text}`, 'info');
+        store.dispatch('SET_SORT', e.target.value);
       });
     }
   }

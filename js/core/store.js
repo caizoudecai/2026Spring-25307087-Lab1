@@ -10,6 +10,9 @@ class Store {
       activeCategory: 'all',
       isCartOpen: false,
       isMobileMenuOpen: false,
+      isCheckoutOpen: false,
+      isDeviceManagerOpen: false,
+      sortBy: 'popular',
       notifications: [],
       isLoading: true
     };
@@ -82,6 +85,10 @@ class Store {
       }
       case 'TOGGLE_CART': {
         this.state.isCartOpen = !this.state.isCartOpen;
+        break;
+      }
+      case 'SET_SORT': {
+        this.state.sortBy = payload;
         break;
       }
       case 'TOGGLE_MOBILE_MENU': {
