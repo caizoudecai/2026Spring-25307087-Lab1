@@ -2,8 +2,12 @@ import { store } from './core/store.js';
 import { database } from '../data/db.js';
 import { Header } from './components/Header.js';
 import { Sidebar } from './components/Sidebar.js';
-import { ProductList } from './components/ProductList.js';
 import { Cart } from './components/Cart.js';
+import { CheckoutModal } from './components/CheckoutModal.js';
+import { DeviceManagerModal } from './components/DeviceManagerModal.js';
+import { Router } from './core/router.js';
+import { StorefrontView } from './views/StorefrontView.js';
+import { AdminDashboard } from './views/AdminDashboard.js';
 
 class App {
   constructor() {
@@ -22,16 +26,24 @@ class App {
       user: database.user
     });
 
-    // 2. Initialize Components
+    // 2. Initialize Global Components (Header, Sidebar, Modals)
     this.components = [
       new Header('header-root'),
       new Sidebar('sidebar-root'),
-      new ProductList('product-list-root'),
-      new Cart('cart-root')
+      new Cart('cart-root'),
+      new CheckoutModal('checkout-root'),
+      new DeviceManagerModal('device-manager-root')
     ];
 
-    // 3. Mount all components
+    // 3. Mount all global components
     this.components.forEach(comp => comp.mount());
+
+    // 4. Initialize Router
+    this.router = new Router([
+      { path: '/', component: StorefrontView },
+      { path: '/admin', component: AdminDashboard },
+      { path: '*', component: StorefrontView }
+    ]);
 
     // 4. Setup Global Event Listeners
     this.setupGlobalEvents();

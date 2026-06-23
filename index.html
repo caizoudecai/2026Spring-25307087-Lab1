@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="css/components/product.css">
   <link rel="stylesheet" href="css/components/cart.css">
   <link rel="stylesheet" href="css/components/ui.css">
+  <link rel="stylesheet" href="css/components/admin.css">
   
   <style>
     /* Critical path CSS for loader */
@@ -72,36 +73,15 @@
       <!-- Sidebar Navigation -->
       <aside id="sidebar-root" class="app-sidebar hide-on-mobile"></aside>
       
-      <!-- Main Content Area -->
-      <main class="app-content">
-        <!-- Promotional Hero Banner -->
-        <section class="hero-banner mb-4">
-          <div class="hero-content">
-            <h1>Fresh Groceries,<br>Delivered Fast.</h1>
-            <p>Experience the seamless flow of data across devices.</p>
-            <button class="btn btn-light mt-3" onclick="document.getElementById('product-list-root').scrollIntoView({behavior: 'smooth'})">Shop Now</button>
-          </div>
-        </section>
-
-        <!-- Product Grid -->
-        <section class="products-section">
-          <div class="section-header">
-            <h2>Featured Products</h2>
-            <div class="sort-controls">
-              <select class="form-select" aria-label="Sort products">
-                <option value="popular">Most Popular</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="price-high">Price: High to Low</option>
-              </select>
-            </div>
-          </div>
-          
-          <div id="product-list-root" class="min-h-500"></div>
-        </section>
+      <!-- Main Content Area (Router View Root) -->
+      <main id="main-view-root" class="app-content">
+        <!-- Content will be dynamically injected by Router -->
       </main>
     </div>
 
-    <!-- Slide-out Cart Drawer -->
+    <!-- Modals -->
+    <div id="checkout-root"></div>
+    <div id="device-manager-root"></div>
     <div id="cart-root" class="cart-drawer-container"></div>
     
   </div>
