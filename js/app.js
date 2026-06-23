@@ -5,6 +5,7 @@ import { Sidebar } from './components/Sidebar.js';
 import { Cart } from './components/Cart.js';
 import { CheckoutModal } from './components/CheckoutModal.js';
 import { DeviceManagerModal } from './components/DeviceManagerModal.js';
+import { ProductDetailModal } from './components/ProductDetailModal.js';
 import { Router } from './core/router.js';
 import { StorefrontView } from './views/StorefrontView.js';
 import { AdminDashboard } from './views/AdminDashboard.js';
@@ -32,7 +33,8 @@ class App {
       new Sidebar('sidebar-root'),
       new Cart('cart-root'),
       new CheckoutModal('checkout-root'),
-      new DeviceManagerModal('device-manager-root')
+      new DeviceManagerModal('device-manager-root'),
+      new ProductDetailModal('product-detail-root')
     ];
 
     // 3. Mount all global components

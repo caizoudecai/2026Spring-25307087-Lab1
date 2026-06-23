@@ -77,21 +77,26 @@ export class ProductList extends BaseComponent {
     if (!this.container) return;
 
     this.container.addEventListener('click', (e) => {
-      // Add to Cart
-      const addToCartBtn = e.target.closest('.add-to-cart-btn');
-      if (addToCartBtn && !addToCartBtn.disabled) {
-        const productId = addToCartBtn.dataset.id;
+      // Handle Add to Cart
+      if (e.target.closest('.add-to-cart')) {
+        const btn = e.target.closest('.add-to-cart');
+        const productId = parseInt(btn.dataset.id);
+        const product = store.getState().products.find(p => p.id === productId);
+        
+        if (product) {
+          store.dispatch('ADD_TO_CART', product);
+          btn.classList.add('clicked');
+          setTimeout(() => btn.classList.remove('clicked'), 300);
+        }
+      }
+
+      // Handle Product Detail View (clicking on image or title)
+      const productCard = e.target.closest('.product-card');
+      if (productCard && !e.target.closest('.add-to-cart')) {
+        const productId = parseInt(productCard.querySelector('.add-to-cart-btn')?.dataset.id || productCard.querySelector('.add-to-cart')?.dataset.id);
         const product = store.getState().products.find(p => p.id === productId);
         if (product) {
-          store.dispatch('ADD_TO_CART', { product, quantity: 1 });
-          
-          // Animate button
-          addToCartBtn.classList.add('clicked');
-          addToCartBtn.textContent = 'Added!';
-          setTimeout(() => {
-            addToCartBtn.classList.remove('clicked');
-            addToCartBtn.textContent = 'Add to Cart';
-          }, 1000);
+          document.dispatchEvent(new CustomEvent('open-product-detail', { detail: product }));
         }
       }
 
